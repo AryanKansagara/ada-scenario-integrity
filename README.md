@@ -38,7 +38,7 @@ Successful compilation produces a JSON intermediate program. Only accepted progr
 
 This is Node ESM with runtime grammar and dataflow checks, not a TypeScript build. No Ada API integration or compatible export schema has been validated. There is no branch language, temporal evolution, fuzzy matching, general natural-language contradiction detector or model-assisted linting. The knowledge checker requires explicit `private` annotations; unannotated sensitive facts cannot be inferred. `learn` from a live tool cannot establish a verified disclosure locally. Free text with spaces is rejected, rather than assigned a fictitious semantic score.
 
-The next milestones are a larger separately authored corpus, bounded branch/temporal semantics and schema-checked Ada import/export. This small fixture suite is not a precision/recall benchmark on customer simulations. GitHub Actions is prepared but not remotely executed.
+The next milestones are a larger separately authored corpus, bounded branch/temporal semantics and schema-checked Ada import/export. This small fixture suite is not a precision/recall benchmark on customer simulations. GitHub Actions runs the same tests and CLI demo; inspect the repository Actions tab for the latest hosted result.
 
 ## Sources and overlap
 
