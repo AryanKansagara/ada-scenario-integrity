@@ -1,0 +1,14 @@
+{
+  "name": "ada-scenario-integrity",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic explicit symbolic fact DSL compiler and local mock execution; no natural-language grading, Ada export or vendor execution.",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node cli.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

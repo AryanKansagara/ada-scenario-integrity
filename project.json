@@ -1,0 +1,9 @@
+{
+  "company": "Ada",
+  "title": "Scenario Integrity Compiler",
+  "test_command": "node --test",
+  "demo_command": "node cli.mjs",
+  "scope": "Deterministic explicit symbolic fact DSL compiler and local mock execution; no natural-language grading, Ada export or vendor execution.",
+  "implemented": true,
+  "integration_status": "unverified"
+}
