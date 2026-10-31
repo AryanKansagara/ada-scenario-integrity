@@ -1,0 +1,144 @@
+{
+  "provenance": "executed authored corpus",
+  "vendorIntegration": false,
+  "clean": {
+    "schemaVersion": 1,
+    "ok": true,
+    "diagnostics": [],
+    "program": {
+      "name": "shipping",
+      "nodes": [
+        {
+          "line": 1,
+          "op": "scenario",
+          "args": [
+            "shipping"
+          ]
+        },
+        {
+          "line": 2,
+          "op": "private",
+          "args": [
+            "order_1.status",
+            "shipped"
+          ]
+        },
+        {
+          "line": 3,
+          "op": "initial",
+          "args": [
+            "order_1.status",
+            "shipped"
+          ]
+        },
+        {
+          "line": 4,
+          "op": "tool",
+          "args": [
+            "lookup",
+            "mock"
+          ]
+        },
+        {
+          "line": 5,
+          "op": "mock",
+          "args": [
+            "lookup",
+            "order_1.status",
+            "shipped"
+          ]
+        },
+        {
+          "line": 6,
+          "op": "call",
+          "args": [
+            "lookup",
+            "order_1.status"
+          ]
+        },
+        {
+          "line": 7,
+          "op": "learn",
+          "args": [
+            "lookup",
+            "order_1.status"
+          ]
+        },
+        {
+          "line": 8,
+          "op": "user",
+          "args": [
+            "order_1.status",
+            "shipped"
+          ]
+        },
+        {
+          "line": 9,
+          "op": "assert",
+          "args": [
+            "order_1.status",
+            "shipped"
+          ]
+        }
+      ],
+      "tools": {
+        "lookup": "mock"
+      },
+      "mocks": {
+        "lookup:order_1.status": "shipped"
+      }
+    },
+    "scope": "explicit same-time symbolic facts only; no Ada integration or natural-language grading",
+    "execution": {
+      "provenance": "authored local mock execution",
+      "status": "pass",
+      "observations": [
+        {
+          "line": 6,
+          "kind": "call",
+          "tool": "lookup",
+          "key": "order_1.status",
+          "status": "mocked",
+          "value": "shipped"
+        },
+        {
+          "line": 9,
+          "kind": "assert",
+          "key": "order_1.status",
+          "expected": "shipped",
+          "actual": "shipped",
+          "status": "pass"
+        }
+      ]
+    }
+  },
+  "broken": {
+    "schemaVersion": 1,
+    "ok": false,
+    "diagnostics": [
+      {
+        "code": "E_CONTRADICTION",
+        "message": "same-time fixture facts disagree",
+        "line": 3,
+        "column": 9,
+        "endColumn": 23
+      },
+      {
+        "code": "E_LEAK",
+        "message": "private fact in user knowledge without prior mocked disclosure",
+        "line": 4,
+        "column": 6,
+        "endColumn": 20
+      },
+      {
+        "code": "E_MISSING_MOCK",
+        "message": "mocked tool has no requested record",
+        "line": 6,
+        "column": 13,
+        "endColumn": 27
+      }
+    ],
+    "program": null,
+    "scope": "explicit same-time symbolic facts only; no Ada integration or natural-language grading"
+  }
+}
